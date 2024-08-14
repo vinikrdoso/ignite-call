@@ -5,7 +5,7 @@ import { Container, Header } from '../styles'
 import { ConnectBox, ConnectItem, AuthError } from './styles'
 import { signIn, useSession } from 'next-auth/react'
 
-export default function Register() {
+export default function ConnectCalendar() {
   const session = useSession()
   const router = useRouter()
 
