@@ -1,15 +1,4 @@
-// export function getWeekDays() {
-//   const formatter = new Intl.DateTimeFormat('pt-BR', { weekday: 'long' })
-
-//   return Array.from(Array(7).keys())
-//     .map((day) => formatter.format(new Date(Date.UTC(2021, 5, day))))
-//     .map((weekDay) => {
-//       return weekDay.substring(0, 1).toUpperCase().concat(weekDay.substring(1))
-//     })
-// }
-
-export function getWeekDays(locale = 'pt-BR') {
-  // Opção de usar outras localidades
+export function getWeekDays({ locale = 'pt-BR', short = false }) {
   const formatter = new Intl.DateTimeFormat(locale, { weekday: 'long' })
 
   const now = new Date()
@@ -21,6 +10,9 @@ export function getWeekDays(locale = 'pt-BR') {
       return formatter.format(date)
     })
     .map((weekDay) => {
+      if (short) {
+        return weekDay.substring(0, 3).toUpperCase()
+      }
       return weekDay.substring(0, 1).toUpperCase().concat(weekDay.substring(1))
     })
 }
