@@ -45,6 +45,7 @@ export default function UpdateProfile() {
 
     await router.push(`/schedule/${session.data?.user.username}`)
   }
+
   return (
     <Container>
       <Header>
@@ -90,8 +91,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     res,
     buildNextAuthOptions(req, res),
   )
-
-  console.log('getServerSideProps', session)
 
   return {
     props: {

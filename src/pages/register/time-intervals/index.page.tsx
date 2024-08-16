@@ -92,7 +92,7 @@ export default function TimeIntervals() {
 
   const intervals = watch('intervals')
 
-  const weekDays = getWeekDays()
+  const weekDays = getWeekDays({})
 
   const { fields } = useFieldArray({
     control,

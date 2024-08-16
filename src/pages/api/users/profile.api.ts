@@ -21,14 +21,12 @@ export default async function handler(
     res,
     buildNextAuthOptions(req, res),
   )
-  console.log('🚀 ~ session:', session)
 
   if (!session) {
     return res.status(401).end()
   }
 
   const { bio } = updateProfileBodySchema.parse(req.body)
-  console.log('🚀 ~ bio:', bio)
 
   await prisma.user.update({
     where: {

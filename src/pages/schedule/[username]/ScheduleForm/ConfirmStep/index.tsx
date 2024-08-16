@@ -27,7 +27,6 @@ export function ConfirmStep() {
   }
   return (
     <ConfirmForm as="form" onSubmit={handleSubmit(handleConfirmScheduling)}>
-      {' '}
       <FormHeader>
         <Text>
           <CalendarBlank />
